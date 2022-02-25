@@ -1,3 +1,3 @@
-export default function useExmaple() {
+export default function useExample() {
   return {};
 }
