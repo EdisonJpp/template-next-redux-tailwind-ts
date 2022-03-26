@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Folder Structure Nextjs app
+============================
 
-## Getting Started
+> Folder structure in nextjs, with integrated technologies like redux/toolkit, tailwind, sass
 
-First, run the development server:
+### A typical directory layout
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    .
+    ├── components        # components    
+	├── lib                 # lib
+    ├── pages                 # pages
+    ├── public                 # statics
+    ├── styles                 # styles
+    ├── LICENSE
+    └── README.md
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Use short lowercase names at least for the top-level files and folders except
+> `LICENSE`, `README.md`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Components
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Reusable components are usually placed in the `components` folder
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+> **Q: How will we split the components within the components folder?**
 
-## Learn More
+> **A:** We'll break them down by `entity name`, `ui`, and `common`
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#####  UI: ( common common is the same, the only thing inside that has a header, body, footer, navbar, etc..  )
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ├── ...
+    ├── ui       # Modal, Button, Text, etc...
+    │    ├── index.ts   # Export all the components that are inside
+    │    ├── Button    # Component name
+    │          └── index.tsx   # Export default button component
+    │          └── Button.tsx  # Button component 
+    │          └── Button.module.sass  # Button component styles
+    └── ...
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##### Entity name: 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ├── ...
+    ├── user       # all components that belong to user
+	│   ├── index.ts              # Export all the components that are inside
+    │   ├── UserCard.              # Component name
+    │           └── index.tsx   # Export default button component
+    │           └── UserCard.tsx  # UserCard component 
+    │           └── UserCard.module.sass  # UserCard component styles
+    └── ...
