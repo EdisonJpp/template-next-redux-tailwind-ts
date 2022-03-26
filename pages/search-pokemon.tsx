@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import styles from "../styles/Home.module.css";
+import styles from "@styles/sass/Home.module.sass";
 
 import { UserCard } from "@components/user";
 import { Button, Modal } from "@components/ui";
@@ -30,15 +30,12 @@ const Home: NextPage = () => {
         className="border-2 my-10 mx-20 container"
         onChange={({ target }) => target.value && setPokemonName(target.value)}
       />
-      <p
-        className="text-center text-2xl text-primary-500"
-        onClick={() => router.push("about")}
-      >
+      <p className={styles.pokemonName} onClick={() => router.push("about")}>
         {data.name}
       </p>
-      <p className="text-center text-xl text-blue-400">abilities</p>
+      <p className={styles.abilitiesContainer}>abilities</p>
       {(data.abilities || []).map((ability: any) => (
-        <p className="text-center text-base text-blue-400" key={ability.slot}>
+        <p className={styles.abilitiesItem} key={ability.slot}>
           {ability.ability.name}
         </p>
       ))}

@@ -1,5 +1,5 @@
-import "../styles/globals.css";
-import "../styles/globals.module.sass";
+import "@styles/globals.css";
+import "@styles/globals.module.sass";
 
 import type { AppProps } from "next/app";
 import { wrapper } from "@lib/store";
