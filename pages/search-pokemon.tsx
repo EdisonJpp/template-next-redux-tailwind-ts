@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   );
 
   if (isLoading) return <div>Loading... </div>;
-
+    console.log(isLoading, 'edison')
   return (
     <div className={styles.container}>
       <Head>
